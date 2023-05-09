@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px  darkgray;
+}
+
+.clientName{
+    font-size: medium;
+    font-weight: 1000;
+}
+
+.col-sm-4{
+    text-align: center;
+}
