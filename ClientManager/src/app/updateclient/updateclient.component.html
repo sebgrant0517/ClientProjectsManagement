@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/clients/update">Client Project Manager</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/logout">Log-Out</a></li>
+        <li><a href="/clients">Clients</a></li>
+        <li class="active"><a href="/clients/update">Update Clients</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div>
+    <h1>Client Project Manager</h1>
+    <hr>
+    <h2>Update The Client</h2>
+    <br>
+    <form #addForm="ngForm" (ngSubmit)="updateClient(addForm)">
+    <div class="form-group">
+        <label for="client_name">Name</label>
+        <input type="text" ngModel name="client_name" class="form-control" id="client_name" placeholder="Name" required>
+        </div>
+    <div class="modal-footer">
+        <button [disabled]="addForm.invalid" id="update-client-form" type="submit" class="btn btn-primary" >Update Client</button>
+    </div>
+    </form>

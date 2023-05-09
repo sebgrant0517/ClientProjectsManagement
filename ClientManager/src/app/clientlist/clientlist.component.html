@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/clients">Client Project Manager</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/logout">Log-Out</a></li>
+        <li class="active"><a href="/clients">Clients</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div>
+    <h1>Client Project Manager</h1>
+    <hr>
+    <div class="container">
+        <div clas="row" *ngFor = "let client of clients">
+            <div class="col-sm-3">
+                <p class="clientName">{{client.client_name}}</p>
+            </div>
+            <div class="col-sm-3">
+                <button (click)="projects(client.client_name)">Projects</button>
+            </div>
+            <div class="col-sm-2">
+                <button routerLink="/clients/pdf">PDF</button>
+            </div>
+            <div class="col-sm-2">
+                <button (click)="updateClient(client.client_name, client.client_pdf, client.client_id)">Update</button>
+            </div>
+            <div class="col-sm-2">
+                <button (click)="deleteClient(client.client_id)">Delete</button>
+            </div>
+            <br><br><br>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div clas="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <button (click)="addClient()">Add Client</button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+</div>

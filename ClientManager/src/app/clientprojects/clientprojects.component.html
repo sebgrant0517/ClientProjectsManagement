@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/clients/projects">Client Project Manager</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/logout">Log-Out</a></li>
+        <li><a href="/clients">Clients</a></li>
+        <li class="active"><a href="/clients/projects">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div>
+    <h1>Client Project Manager</h1>
+    <hr>
+<h2>{{clientName.cName}}'s List of Projects</h2>
+<br>
+<div class="container">
+    <div clas="row" *ngFor = "let project of projects">
+        <div class="col-sm-3">
+            <p class="projectName">{{project.projects_name}}</p>
+        </div>
+        <div class="col-sm-3">
+            <p>{{project.projects_description}}</p>
+        </div>
+        <div class="col-sm-3">
+            <button (click)="updateProject(project.projects_name, project.projects_client, project.projects_id)">Update</button>
+        </div>
+        <div class="col-sm-3">
+            <button (click)="deleteProject(project.projects_id)">Delete</button>
+        </div>
+        <br><br><br>
+    </div>
+</div>
+<div class="container">
+  <div clas="row">
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-4">
+          <button (click)="addProject()">Add Project</button>
+      </div>
+      <div class="col-sm-4">
+      </div>
+  </div>
+</div>
